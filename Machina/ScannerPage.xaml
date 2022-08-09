@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Machina.ScannerPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="background.png">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10"
+            VerticalOptions="CenterAndExpand">
+            <Grid
+                RowDefinitions="400">
+                <Image
+                    Grid.Row="0"
+                    Source="cadre.png"
+                    Aspect="Fill"/>
+                <AbsoluteLayout
+                    Grid.Row="0">
+                    <Image
+                        x:Name="photo"
+                        Aspect="AspectFill"
+                        Source="{Binding _ImageSource}"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        Margin="22"
+                        BackgroundColor="Gray"/>
+                    <StackLayout
+                        x:Name="infosStack"
+                        Orientation="Horizontal"
+                        IsVisible="{Binding _IsFinished}"
+                        AbsoluteLayout.LayoutBounds="0, 1, 1, 108"
+                        Margin="20, 0, 20, 20"
+                        Padding="30, 0"
+                        Spacing="15"
+                        AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                        BackgroundColor="#90000000">
+                        <Label
+                            Text="{Binding Sexe}"
+                            Style="{StaticResource PixelLabel}"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="StartAndExpand"
+                            FontAttributes="Bold"
+                            FontSize="45"/>
+                        <Label
+                            Text="AGE"
+                            Style="{StaticResource PixelLabel}"
+                            TextColor="White"
+                            FontSize="25"
+                            Margin="0, 0, 0, 19"
+                            FontAttributes="Bold"
+                            VerticalOptions="End"
+                            />
+                        <Label
+                            Text="{Binding Age}"
+                            Style="{StaticResource PixelLabel}"
+                            VerticalOptions="Center"
+                            TextColor="White"
+                            FontSize="45"
+                            FontAttributes="Bold"/>
+                    </StackLayout>
+                </AbsoluteLayout>
+                <Image
+                    x:Name="laserImage"
+                    Source="laser.png"
+                    VerticalOptions="Start"/>
+            </Grid>
+            <Label
+                x:Name="stateLabel"
+                Style="{StaticResource PixelLabel}"
+                Text="Scanning ..."
+                HorizontalOptions="CenterAndExpand"
+                TextColor="White"/>
+            <Button
+                x:Name="continueButton"
+                Text="Back"
+                Opacity="0"
+                TextColor="White"
+                BorderColor="White"
+                BorderWidth="1"
+                Style="{StaticResource PixelLabel}"
+                BackgroundColor="Transparent"
+                TextTransform="None"
+                Clicked="BackButton"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

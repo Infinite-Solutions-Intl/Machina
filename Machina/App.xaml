@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Machina.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform
+            x:TypeArguments="x:String" x:Key="Minercraftory">
+                <On Platform="Android" Value="Minercraftory.ttf#Minercraftory"/>
+                <On Platform="iOS" Value="Minercraftory"/>
+            </OnPlatform>
+
+            <Style
+                x:Key="PixelLabel"
+                TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource Key=Minercraftory}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
